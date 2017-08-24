@@ -1,4 +1,4 @@
-# Mellanox FCA checker
+# FCA checker
 
 ## Overview
 
