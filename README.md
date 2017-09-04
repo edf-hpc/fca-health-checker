@@ -9,6 +9,7 @@ This script aims at checking the state of the Fabric Collective Accelerator (FCA
      python fca_checker.py PATH_REDUCE_TEST LOCAL_IB_IP [FCA_PATH]
 
 Example:
+
      python /home/user/fca_crash_detector/fca_check.py /usr/local/mellanox/fca/fca1/reduce_test 192.168.90.62
      
 This script will return 0 if the service is up and responsive, 1 otherwise.
