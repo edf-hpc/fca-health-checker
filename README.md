@@ -17,7 +17,8 @@ The default path installation for FCA is */opt/mellanox/fca* if the path is diff
 
 ## REDUCE TEST
 
-PATH_REDUCE_TEST has to be remplaced by the path of the reduce test binary provided by mellanox, normally it is located under *Mellanox_installation_path/fca/sdk/examples/fca1/*. In some cases this binary has be compiled. 
+PATH_REDUCE_TEST has to be remplaced by the path of the reduce test binary provided by mellanox,
+normally it is located under *Mellanox_installation_path/fca/sdk/examples/fca1/*. In some cases this binary has to be compiled. 
 
 ## Behaviour of MPI application when FCA service is down
 
@@ -43,7 +44,7 @@ There are two possible behaviours if the FCA is down:
 
 ### FMM not found
 
-This happend when the service FCA has been stoped during a considerable time:
+This happend when the service FCA has been stoped during a considerable amount of time:
 
      1504535969.024918 [FCA_CORE node1 42080] fca_proto.c:664 error Service record 'fca' not found
      1504535969.024961 [FCA_CORE node1 42080] fca_proto.c:748 error Failed to find FMM service record: No such file or directory
