@@ -15,6 +15,14 @@ Example:
 This script will return 0 if the service is up and responsive, 1 otherwise.
 The default path installation for FCA is */opt/mellanox/fca* if the path is different for your particular installation please use FCA_PATH to indicate this path.
 
+## How does it work?
+
+This script performs three tests in order to check the state of the FCA service:
+ - It first try to contact the CLI using the 2345 port
+ - It uses the binary *fca_find_fmm* provided by Mellanox to verify the presence of FMM service
+ - It tries to initialize a collective communication using a benchmark provided by Mellanox
+ 
+
 ## REDUCE TEST
 
 PATH_REDUCE_TEST has to be remplaced by the path of the reduce test binary provided by mellanox,
