@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ 
+
+override_dh_auto_build:
+
+	/opt/mellanox/fca/sdk/examples/fca1/ && make
+
+clean:
+	dh $@
+
