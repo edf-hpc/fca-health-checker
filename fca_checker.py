@@ -21,31 +21,42 @@ import time
 import sys
 import os
 import re
+from optparse import OptionParser
 
-banner ="python fca_checker.py PATH_REDUCE_TEST LOCAL_IB_IP [FCA_PATH]"
+
 fca_error = { 'fca_cli': 0, 'fca_fmm': 1, 'fca_bench': 1}
 
-if len(sys.argv)<3:
-    sys.stderr.write('Parameter error\n')
-    sys.stderr.write(banner+'\n')
-    sys.exit(1)
+usage ="python %prog [options] -i LOCAL_IB_IP"
+parser = OptionParser(usage)
+parser.add_option("-i", "--ib_ip", dest='local_ib_ip',
+                  help="IP of local infiniband interface")
 
-if len(sys.argv)>3:
-    fca_path = sys.argv[3]
-else:
-    fca_path = "/opt/mellanox/fca/"
+parser.add_option("-b", "--test_path", dest='bench_path',
+                  default='/opt/mellanox/fca/bin/reduce_test',help='Path to FCA reduce test')
+
+parser.add_option("-l", "--fca_path", dest='fca_path',
+                  default='/opt/mellanox/fca/',help="Path to FCA installation")
+
+(options, args) = parser.parse_args()
+
+if not options.local_ib_ip:
+  parser.error('Local IB ip is required')
+
+fca_path = options.fca_path
 
 fmm_cmd=os.path.join(fca_path,"bin/fca_find_fmm")
 
-bench_path = sys.argv[1]
-local_ib_ip = sys.argv[2]
+bench_path = options.bench_path
+if not os.path.isfile(bench_path):
+  parser.error('The benchmark file does not exist')
+
+local_ib_ip = options.local_ib_ip
 
 ## simple ipv4 regex check
 ip = re.compile(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$')
 
 if not ip.match(local_ib_ip):
-    sys.stderr.write('Invalid parameter: second parameter has to be a valid IPv4 address\n')
-    sys.stderr.write(banner+'\n')
+    parser.error('Invalid parameter: second parameter has to be a valid IPv4 address\n')
     sys.exit(1)
 
 
