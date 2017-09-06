@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Cristian RUIZ <cristian-externe.ruiz@edf.fr>
 Homepage: https://github.com/edf-hpc/fca-health-checker
 Build-Depends:
- debhelper (>= 8),
+ debhelper (>= 9),
  python-all (>= 2.6.6-3~),
  fca (>= 2.5),
  libibmad5
