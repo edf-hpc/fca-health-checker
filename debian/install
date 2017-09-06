@@ -1,1 +1,2 @@
 *.py opt/mellanox/fca/bin/
+build_bench/reduce_test opt/mellanox/fca/bin/

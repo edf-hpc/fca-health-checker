@@ -5,8 +5,9 @@
 
 override_dh_auto_build:
 
-	/opt/mellanox/fca/sdk/examples/fca1/ && make
+	cp -r /opt/mellanox/fca/sdk/examples/fca1/ build_bench/
+	cd build_bench && make
 
 clean:
 	dh $@
-
+	rm -rf build_bench
