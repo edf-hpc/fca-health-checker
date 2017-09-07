@@ -7,7 +7,9 @@ Build-Depends:
  debhelper (>= 9),
  python-all (>= 2.6.6-3~),
  fca (>= 2.5),
- libibmad5
+ libibmad5,
+ libibverbs1,
+ librdmacm1
 X-Python-Version: >= 2.6
 Standards-Version: 3.9.6
 
