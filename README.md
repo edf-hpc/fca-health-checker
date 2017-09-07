@@ -10,8 +10,8 @@ To use it just type:
 It will return 0 if the service is up and responsive, 1 otherwise.
 Three paramters are set by defualt:
 
-- FCA path installation: */opt/mellanox/fca*
-- FCA Reduce test path installation: */opt/mellanox/fca/bin/reduce_test*
+- FCA installation path: */opt/mellanox/fca*
+- FCA Reduce test installation path: */opt/mellanox/fca/bin/reduce_test*
 - Local infiniband IP, by default is retrieved using ib0 ip address
 
 ## How does it work?
