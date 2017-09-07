@@ -32,7 +32,7 @@ parser.add_option("-i", "--ib_ip", dest='local_ib_ip',
                   help="IP of local infiniband interface")
 
 parser.add_option("-b", "--test_path", dest='bench_path',
-                  default='/opt/mellanox/fca/bin/reduce_test',help="Path to FCA reduce test [default: %default]")
+                  default='/opt/mellanox/fca/bin/reduce_bench',help="Path to FCA reduce benchmark [default: %default]")
 
 parser.add_option("-l", "--fca_path", dest='fca_path',
                   default='/opt/mellanox/fca/',help="Path to FCA installation [default: %default]")
