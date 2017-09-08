@@ -17,7 +17,7 @@ Package: fca-health-checker
 Architecture: all
 Depends:
  ${misc:Depends},
- ${python:Depends},
+ python-all (>= 2.6.6-3~),
  fca
 Description: This tool aims at checking the state of the Fabric Collective Accelerator (FCA) service.
 
