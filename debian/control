@@ -5,20 +5,17 @@ Maintainer: Cristian RUIZ <cristian-externe.ruiz@edf.fr>
 Homepage: https://github.com/edf-hpc/fca-health-checker
 Build-Depends:
  debhelper (>= 9),
- python-all (>= 2.6.6-3~),
  fca (>= 2.5),
  libibmad5,
  libibverbs1,
  librdmacm1
-X-Python-Version: >= 2.6
 Standards-Version: 3.9.6
 
 Package: fca-health-checker
 Architecture: any
-Depends:
- ${misc:Depends},
- python-all (>= 2.6.6-3~),
- fca
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ python,
+ fca (>= 2.5)
 Description: health checker for the Fabric Collective Accelerator
  This tool aims at checking the state of the Fabric Collective Accelerator
  (FCA) service. See README.md for more information about the different
