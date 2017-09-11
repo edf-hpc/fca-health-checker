@@ -19,5 +19,7 @@ Depends:
  ${misc:Depends},
  python-all (>= 2.6.6-3~),
  fca
-Description: This tool aims at checking the state of the Fabric Collective Accelerator (FCA) service.
-
+Description: health checker for the Fabric Collective Accelerator
+ This tool aims at checking the state of the Fabric Collective Accelerator
+ (FCA) service. See README.md for more information about the different
+ tests.
