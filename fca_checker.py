@@ -41,22 +41,22 @@ parser.add_option("-l", "--fca_path", dest='fca_path',
 
 local_ib_ip = ""
 if options.local_ib_ip:
-  local_ib_ip = options.local_ib_ip
+    local_ib_ip = options.local_ib_ip
 else:
-  output = os.popen("/sbin/ifconfig ib0 | grep 'inet adr:' | cut -d: -f2 | awk '{ print $1}'").read()
-  local_ib_ip = output.rstrip()
-  if local_ib_ip:
-    print "Local infiniband IP is: "+local_ib_ip
-  else:
-    parser.error("Local infiniband IP not found, please use -i parameter")
+    output = os.popen("/sbin/ifconfig ib0 | grep 'inet adr:' | cut -d: -f2 | awk '{ print $1}'").read()
+    local_ib_ip = output.rstrip()
+    if local_ib_ip:
+        print "Local infiniband IP is: "+local_ib_ip
+    else:
+        parser.error("Local infiniband IP not found, please use -i parameter")
 
 fca_path = options.fca_path
 
-fmm_cmd=os.path.join(fca_path,"bin/fca_find_fmm")
+fmm_cmd = os.path.join(fca_path,"bin/fca_find_fmm")
 
 bench_path = options.bench_path
 if not os.path.isfile(bench_path):
-  parser.error('The benchmark file does not exist')
+    parser.error('The benchmark file does not exist')
 
 ## simple ipv4 regex check
 ip = re.compile(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$')
