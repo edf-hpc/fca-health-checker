@@ -8,9 +8,9 @@ override_dh_auto_build:
 	cp -r /opt/mellanox/fca/sdk/examples/fca1/ build_bench/
 	cd build_bench && make EXE_NAME="reduce_bench" INC="-I. -I/opt/mellanox/fca/include" LIBS="-L/opt/mellanox/fca/lib/ -L/opt/mellanox/fca/lib64/ -lfca"
 
-clean:
-	dh $@
+override_dh_clean:
 	rm -rf build_bench
+	dh_clean
 
 override_dh_shlibdeps:
 	dh_shlibdeps -l/opt/mellanox/fca/lib/
