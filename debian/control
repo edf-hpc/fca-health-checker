@@ -14,7 +14,7 @@ X-Python-Version: >= 2.6
 Standards-Version: 3.9.6
 
 Package: fca-health-checker
-Architecture: all
+Architecture: any
 Depends:
  ${misc:Depends},
  python-all (>= 2.6.6-3~),
