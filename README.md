@@ -6,7 +6,7 @@ This script aims at checking the state of the Fabric Collective Accelerator (FCA
 
 To use it just type:
 
-     > fca_checker.py
+     > fca_check
 
 Example of output:
 
