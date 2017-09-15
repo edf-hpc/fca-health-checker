@@ -6,10 +6,47 @@ This script aims at checking the state of the Fabric Collective Accelerator (FCA
 
 To use it just type:
 
-     > fca_checker.py
-It will return 0 if the service is up and responsive, 1 otherwise.
-Three paramters are set by defualt:
+     > fca_check
 
+Example of output:
+
+     Local infiniband IP is: 192.168.1.12
+     Testing FCA telnet CLI ...
+     FCA telnet CLI is up
+     Testing FCA FMM ...
+     FMM found ah=0x9fce30
+
+     FMM replied from [FMM `FMM::aradmin1', lid 5, 0x2899f14fd15529a8], GUID: 0x248a07030065176a
+
+     FCA FMM is up
+     Benchmark client still running, killing... 
+     Benchmark client still running, killing... 
+     Benchmark client has terminated
+     REDUCE_TEST: Got communicator, 48 bytes from rank0
+
+     1505216400.863467 [FCA_CORE aradmin1 15560] fca_proto.c:498 warn  Communicator 8 does not exist - ignoring COMM_READY (msg_id: 0)
+
+     Benchmark server still running, killing... 
+     Benchmark server still running, killing... 
+     Benchmark server has terminated
+     REDUCE_TEST: Waiting for 1 connections..
+
+     REDUCE_TEST: got info of 20 bytes from rank  #0 (total: 1)
+
+     REDUCE_TEST: Creating new communicator with 2 node roots...
+
+     REDUCE_TEST: Got communicator
+
+     Benchmark created a FCA comunicator succesfully
+     Tests results: {'fca_bench': 0, 'fca_cli': 0, 'fca_fmm': 0}
+
+It will return 0 if the service is up and responsive, 1 otherwise.
+
+      > echo $?
+      0
+
+Three paramters are set by defualt:
+>>>>>>> master
 - FCA installation path: */opt/mellanox/fca*
 - FCA Reduce test installation path: */opt/mellanox/fca/bin/reduce_test*
 - Local infiniband IP, by default is retrieved using ib0 ip address
