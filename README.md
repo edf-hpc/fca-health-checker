@@ -6,7 +6,7 @@ This script aims at checking the state of the Fabric Collective Accelerator (FCA
 
 To use it just type:
 
-     > fca_check
+     > fca-health-checker
 
 Example of output:
 
