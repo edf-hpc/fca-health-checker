@@ -1,3 +1,9 @@
+fca-health-checker (0.0.3+c9+1) calibre9; urgency=medium
+
+  * Rename fca_checker into fca-health-checker
+
+ -- Mehdi Dogguy <mehdi.dogguy@edf.fr>  Wed, 20 Sep 2017 10:05:21 +0200
+
 fca-health-checker (0.0.2+c9+1) calibre9; urgency=low
 
   * Change name of main script  

@@ -1,2 +1,2 @@
-fca_check opt/mellanox/fca/bin/
-build_bench/reduce_bench opt/mellanox/fca/bin/
+fca-health-checker		opt/mellanox/fca/bin/
+build_bench/reduce_bench	opt/mellanox/fca/bin/
